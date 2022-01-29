@@ -9,14 +9,14 @@ const HeroSection = () => {
   const heroTl = gsap.timeline()
   
   useEffect(()=>{
-    heroTl.fromTo(heroImageRef?.current, {clipPath:'circle(0% at 50% 50%)'}, {clipPath:'circle(100% at 50% 50%)', duration:1, delay:.1,ease: 'Power1.easeIn'})
-    .fromTo(heroTextRef?.current, {opacity:0}, {opacity:1, duration:1, ease: 'Power1.easeIn'}, '<')
+    heroTl.to(heroImageRef?.current, {clipPath:'circle(100% at 50% 50%)', duration:1, delay:.1,ease: 'Power1.easeIn'})
+    .to(heroTextRef?.current, {opacity:1, duration:1, ease: 'Power1.easeIn'}, '<')
 
   },[heroTl])
 
   return (
     <section className="relative w-full h-[50vh] md:h-[70vh]">
-      <div ref={heroTextRef} className="grid px-5 md:px-24  grid-rows-2 justify-center h-full items-center md:grid-rows-1 md:grid-cols-2 text-center md:text-left ">
+      <div ref={heroTextRef} className="grid px-5 md:px-24  grid-rows-2 justify-center h-full items-center md:grid-rows-1 md:grid-cols-2 text-center md:text-left opacity-0 ">
         <div className="">
           <h1 className="font-bold text-xl md:text-4xl text-[#ABABAB]">
             Buy a game at a lower price
@@ -33,7 +33,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div ref={heroImageRef} className="absolute md:left-[100%] md:-translate-x-[100%] left-0 top-0 w-full h-full z-[-1]  md:max-w-[70%]  shadow-xl">
+      <div ref={heroImageRef} className="hero_image absolute md:left-[100%] md:-translate-x-[100%] left-0 top-0 w-full h-full z-[-1]  md:max-w-[70%]  shadow-xl">
         <Image
           src="/assassin creed.jpg"
           alt="assassin creed"
