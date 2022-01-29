@@ -33,3 +33,10 @@ body{
   font-family: 'Quicksand', sans-serif;
 }
 
+.hero_image{
+  clip-path: circle(0% at 50% 50%);
+}
+
+.event_container{
+  clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+}

@@ -8,11 +8,11 @@ const EventSection = () => {
   const evenTl = gsap.timeline()
 
   useEffect(()=>{
-    evenTl.fromTo(eventRef?.current, {clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)'}, {clipPath: 'polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)', duration:1, ease:"Power1.easeIn", delay:.1})
+    evenTl.to(eventRef?.current, {clipPath: 'polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)', duration:1, ease:"Power1.easeIn", delay:.1})
   },[evenTl])
 
   return (
-  <section ref={eventRef} className="relative h-40 w-full flex my-10 overflow-x-hidden">
+  <section ref={eventRef} className="event_container relative h-40 w-full flex my-10 overflow-x-hidden">
     <div className="relative w-1/2 h-full shrink-0">
         <Image
           src="/horizon.jpg"
