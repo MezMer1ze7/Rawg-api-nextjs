@@ -8,7 +8,7 @@ const GameCard = () => {
 
 
   return (
-  <div  className="rounded overflow-hidden opacity-1 shrink-0  ">
+  <div  className="rounded-sm overflow-hidden opacity-1 shrink-0  ">
         <div className="relative min-w-[10rem] h-40">
           <Image src="/god of war.jpg" alt="gp" layout="fill" objectFit="cover"/>
         </div>

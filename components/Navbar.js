@@ -12,7 +12,7 @@ const Navbar = () => {
   const navbarTl = gsap.timeline({paused:true, reversed:true})
 
   useEffect(()=>{
-    navbarTl.fromTo(burgerRef.current, {opacity:0, y:'-50vh'}, {opacity:1, y:0, duration:1, ease: 'Power2.easeOut'})
+    navbarTl.to(burgerRef.current, {opacity:1, y:0, duration:1, ease: 'Power2.easeOut'})
   },[navbarTl])
 
   return (
@@ -37,8 +37,8 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div ref={burgerRef} className="md:hidden absolute top-0 right-0 w-full h-24 bg-black bg-opacity-50 backdrop-blur-sm  px-5 opacity-0">
-        <ul className="flex justify-between space-x-5 font-thin text-xs items-center h-full">
+        <div ref={burgerRef} className="md:hidden absolute top-0 right-0 w-full h-24 bg-black bg-opacity-50 backdrop-blur-sm  px-5 opacity-0 translate-y-[-50vh]">
+        <ul className="flex justify-between space-x-5 font-thin text-xs items-center h-full ">
             <li className='cursor-pointer active:scale-90' onClick={()=>navbarTl.reverse()}><XIcon className="h-5"/></li>
             <li className='cursor-pointer'>About</li>
             <li className='cursor-pointer'>Pricing</li>
