@@ -1,3 +1,4 @@
+
 import EventSection from "../components/EventSection"
 import Game from "../components/Game"
 
@@ -7,18 +8,26 @@ import HeroSection from "../components/HeroSection"
 
 
 
-// 23096131fca44f378b2ba7d779ad1705 
+
 const Home = ()=>{
+
 
 
   return(
     <div>
-
         <HeroSection/>
         <EventSection/>
         <GameStores/>
-        <Game/>
-        <Game/>
+        <Game genre={'action'}/>
+        <Game genre={'strategy'}/>
+        <Game genre={'adventure'}/>
+        <Game genre={'indie'}/>
+        <Game genre={'shooter'}/>
+        <Game genre={'fighting'}/>
+        <Game genre={'arcade'}/>
+        <Game genre={'racing'}/>
+        <Game genre={'sports'}/>
+        <Game genre={'card'}/>
     </div>
   )
 }

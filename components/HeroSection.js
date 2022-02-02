@@ -26,12 +26,13 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full h-[50vh] md:h-[70vh]">
+      
       <div
         ref={heroTextRef}
         className="grid px-5 md:px-24  grid-rows-2 justify-center h-full items-center md:grid-rows-1 md:grid-cols-2 text-center md:text-left opacity-0 "
       >
         <div className="">
-          <h1 className="font-bold text-xl md:text-4xl text-[#ABABAB]">
+          <h1 className="font-bold text-xl md:text-4xl ">
             Buy a game at a lower price
           </h1>
           <h1 className="font-thin text-[#E8E8E8 text-sm md:text-base">
@@ -41,10 +42,10 @@ const HeroSection = () => {
         <div className="space-y-1 md:text-center flex justify-start items-center flex-col  h-full md:h-auto">
           <h1 className="font-semibold md:text-xl">Login to get 5% more off</h1>
           <div className="space-x-5 text-sm md:text-base">
-            <button className="px-3 md:px-5 bg-[#55359A] rounded ">
+            <button className="px-3 md:px-5 bg-[#55359A] rounded link">
               Login
             </button>
-            <button className="px-3 md:px-5 bg-[#3a3a3a] rounded ">
+            <button className="px-3 md:px-5 bg-[#3a3a3a] rounded link">
               Register
             </button>
           </div>
@@ -62,6 +63,8 @@ const HeroSection = () => {
           objectFit="cover"
           className="md:object-right-top"
           quality={100}
+          placeholder="blur"
+          blurDataURL
         />
       </div>
     </section>

@@ -13,6 +13,7 @@ const EventSection = () => {
 
   return (
   <section ref={eventRef} className="event_container relative h-40 w-full flex my-10 overflow-x-hidden">
+    
     <div className="relative w-1/2 h-full shrink-0">
         <Image
           src="/horizon.jpg"
@@ -44,7 +45,7 @@ const EventSection = () => {
       <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] text-center">
         <h1 className="font-bold text-lg md:text-2xl whitespace-nowrap">Join The Sheeesh Event</h1>
         <p className="font-light text-sm md:text-base">And get a free cupon</p>
-        <button className="bg-[#269F33] px-2 rounded mt-2">Join</button>
+        <button className="bg-[#269F33] px-2 rounded mt-2 link">Join</button>
       </div>
   </section>
   );

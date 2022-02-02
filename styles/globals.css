@@ -40,3 +40,7 @@ body{
 .event_container{
   clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
 }
+
+.link{
+  @apply active:scale-90 duration-200
+}

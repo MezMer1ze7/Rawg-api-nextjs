@@ -22,10 +22,10 @@ const Navbar = () => {
         </Link>
         <SearchForm/>
         <ul className="hidden space-x-10 font-thin text-sm md:flex">
-            <li className='cursor-pointer'>About</li>
-            <li className='cursor-pointer'>Pricing</li>
-            <li className='cursor-pointer'>Support</li>
-            <li className="px-5 bg-[#55359A] rounded font-semibold cursor-pointer">Login</li>
+            <li className='link cursor-pointer'>About</li>
+            <li className='link cursor-pointer'>Pricing</li>
+            <li className='link cursor-pointer'>Support</li>
+            <li className="link px-5 bg-[#55359A] rounded font-semibold cursor-pointer">Login</li>
         </ul>
         <div className="md:hidden active:scale-90">
           <button onClick={()=>navbarTl.play()}>
