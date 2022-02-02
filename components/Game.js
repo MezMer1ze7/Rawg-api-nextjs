@@ -1,8 +1,7 @@
-import { ArrowSmDownIcon } from "@heroicons/react/outline";
 import axios from "axios";
 import { useInfiniteQuery } from "react-query";
 import GameCard from "./GameCard";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useEffect } from "react/cjs/react.development";
 
 import { Oval } from "react-loader-spinner";
