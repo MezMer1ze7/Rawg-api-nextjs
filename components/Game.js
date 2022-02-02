@@ -42,7 +42,7 @@ const Game = ({ genre = "action" }) => {
         fetchNextPage()
       }
     });
-  }, []);
+  }, [fetchNextPage, gameRef, data]);
 
   return (
     <div className="px-5 md:px-24 mt-10 py-10 ">
