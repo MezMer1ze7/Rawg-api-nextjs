@@ -32,17 +32,17 @@ const Game = ({ genre = "action" }) => {
     }
   );
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    gameRef.current.addEventListener("scroll", () => {
-      if (
-        gameRef.current.scrollLeft + gameRef.current.clientWidth >=
-        gameRef.current.scrollWidth - 50
-      ) {
-        fetchNextPage()
-      }
-    });
-  }, [fetchNextPage]);
+  //   gameRef.current.addEventListener("scroll", () => {
+  //     if (
+  //       gameRef.current.scrollLeft + gameRef.current.clientWidth >=
+  //       gameRef.current.scrollWidth - 50
+  //     ) {
+  //       fetchNextPage()
+  //     }
+  //   });
+  // }, [fetchNextPage]);
 
   return (
     <div className="px-5 md:px-24 mt-10 py-10 ">
