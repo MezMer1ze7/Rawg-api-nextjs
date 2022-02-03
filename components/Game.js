@@ -7,8 +7,6 @@ import { useEffect } from "react/cjs/react.development";
 import { Oval } from "react-loader-spinner";
 
 const Game = ({ genre = "action" }) => {
-
-
   const fetchSearchResult = async (page = 1) => {
     const { data } = await axios.get(
       `https://api.rawg.io/api/games?key=23096131fca44f378b2ba7d779ad1705&page=${page}&genres=${genre}`
@@ -32,44 +30,53 @@ const Game = ({ genre = "action" }) => {
     }
   );
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   const handleXScroll = () => {
+  //     if (
+  //       gameRef.current.scrollLeft + gameRef.current.clientWidth >=
+  //       gameRef.current.scrollWidth - 50
+  //     ) {
+  //       fetchNextPage();
+  //     }
+  //   };
 
-    gameRef.current.addEventListener("scroll", () => {
-      if (
-        gameRef.current.scrollLeft + gameRef.current.clientWidth >=
-        gameRef.current.scrollWidth - 50
-      ) {
-        fetchNextPage()
-      }
-    });
-  }, [fetchNextPage, gameRef, data]);
+  //   gameRef.current.addEventListener("scroll", handleXScroll);
+
+
+  // }, [ fetchNextPage]);
+
+  // fetch next page at the last game
+  const handleScroll = ()=>{
+    if(gameRef.current.scrollLeft + gameRef.current.clientWidth >= gameRef.current.scrollWidth -50){
+      fetchNextPage()
+    }
+  }
 
   return (
     <div className="px-5 md:px-24 mt-10 py-10 ">
       <h1 className="font-semibold text-base capitalize py-1">{genre}</h1>
-   
-      <div ref={gameRef} className="flex  gap-5 overflow-x-scroll pb-5">
-      {status === 'loading' &&
-      <div className="w-full h-40 flex items-center justify-center">
-          <Oval heigth="100" width="100" color="grey" ariaLabel="loading" />
-      </div>
-      }
+
+      <div ref={gameRef} onScroll={handleScroll} className="flex  gap-5 overflow-x-scroll pb-5">
+        {status === "loading" && (
+          <div className="w-full h-40 flex items-center justify-center">
+            <Oval heigth="100" width="100" color="grey" ariaLabel="loading" />
+          </div>
+        )}
         {data?.pages?.map((data) =>
           data?.data?.results?.map((game) => (
             <GameCard key={game?.id} game={game} />
           ))
         )}
-        {isFetchingNextPage &&
-        <div className="min-w-[10rem] flex items-center justify-center  ">
-          <Oval heigth="100" width="100" color="grey" ariaLabel="loading" />
-        </div>
-        }
-        {error &&
-        <div className="h-40 w-full flex items-center justify-center  ">
-          <h1>Oops!! Sorry</h1>
-        </div>
-      }
-    
+        {isFetchingNextPage && (
+          <div className="min-w-[10rem] flex items-center justify-center  ">
+            <Oval heigth="100" width="100" color="grey" ariaLabel="loading" />
+          </div>
+        )}
+        {error && (
+          <div className="h-40 w-full flex items-center justify-center  ">
+            <h1>Oops!! Sorry</h1>
+          </div>
+        )}
       </div>
     </div>
   );
