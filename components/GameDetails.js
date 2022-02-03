@@ -6,7 +6,7 @@ const GameDetails = ({details, screenShot}) => {
   return (
     <div className="h-full p-5 md:px-24">
       <div className='flex items-center justify-center'>
-      <div className="w-1/2 h-full rounded-sm overflow-hidden">
+      <div className="w-full md:w-[70%] h-full rounded-sm overflow-hidden">
         {details?.background_image?
       <Image src={details?.background_image} alt="sad" width={1920} height={1080} layout='responsive' objectFit='cover' quality={100} priority placeholder="blur"
           blurDataURL/>

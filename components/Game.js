@@ -2,7 +2,6 @@ import axios from "axios";
 import { useInfiniteQuery } from "react-query";
 import GameCard from "./GameCard";
 import { useRef } from "react";
-import { useEffect } from "react/cjs/react.development";
 
 import { Oval } from "react-loader-spinner";
 
@@ -30,20 +29,7 @@ const Game = ({ genre = "action" }) => {
     }
   );
 
-  // useEffect(() => {
-  //   const handleXScroll = () => {
-  //     if (
-  //       gameRef.current.scrollLeft + gameRef.current.clientWidth >=
-  //       gameRef.current.scrollWidth - 50
-  //     ) {
-  //       fetchNextPage();
-  //     }
-  //   };
 
-  //   gameRef.current.addEventListener("scroll", handleXScroll);
-
-
-  // }, [ fetchNextPage]);
 
   // fetch next page at the last game
   const handleScroll = ()=>{
